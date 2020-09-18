@@ -49,7 +49,7 @@ const generateItemElement = function (item) {
       ${item.edit ? createEditForm(item.id, item.name) : itemTitle}
       <div class='shopping-item-controls'>
         <button class='shopping-item-toggle js-item-toggle' ${
-          item.edit ? 'disabled' : null
+          item.edit || item.name.trim() === '' ? 'disabled' : null
         }>
           ${item.checked ? 'uncheck' : 'check'}
         </button>
